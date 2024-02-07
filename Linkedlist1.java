@@ -81,12 +81,34 @@ public class Linkedlist1 {
     public int getSize() {
         return size;
     }
+    // Reverse Linked list using loop 
+    public void reverse() {
+        if(head == null || head.next == null) {
+            return;
+        }
+        Node prevNode = head;
+        Node currNode = head.next;
+        while(currNode != null) {
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+            //update
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head = prevNode;
+    }
     public static void main(String[] args) {
         Linkedlist1 list = new Linkedlist1();
         list.addFirst("world");
         list.addLast("best");
         list.addFirst("Shakib");
         list.addLast("Allrounder");
+        list.addLast("and");
+        list.addLast("also");
+        list.addLast("hardik pandiya");
+        list.printList();
+        list.reverse();
         list.printList();
         //print list size
         System.out.println("size = " +list.getSize());
