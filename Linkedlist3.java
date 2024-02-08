@@ -55,6 +55,9 @@ public class Linkedlist3 {
             currNode = currNode.next;
             size++;
         }
+        if(n == size) {
+            return head.next;
+        }
         int indxToSearch = size-n;
         DemoNode prev = head;
         int i = 1;
