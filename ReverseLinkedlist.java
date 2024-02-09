@@ -64,6 +64,16 @@ public class ReverseLinkedlist {
 		head.next = null;
 		head = prev;
 	}
+	// reverse linked list using recursion 
+	public Node reverseRec(Node head) {
+		if(head == null || head.next == null) {
+			return head;
+		}
+		Node newHead = reverseRec(head.next);
+		head.next.next = head;
+		head.next = null;
+		return newHead;
+	}
     public static void main(String[] args) {
         ReverseLinkedlist list = new ReverseLinkedlist();
         list.addFirst(100);
@@ -71,8 +81,9 @@ public class ReverseLinkedlist {
 		list.addLast(200);
 		list.addLast(500);
 		list.printList();
-		
-		list.reverse();
+		//list.head = list.reverseRec(list.head);
+		//list.printList();
+	    list.reverse();
 		list.printList();
     }
 }
