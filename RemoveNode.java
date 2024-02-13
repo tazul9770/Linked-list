@@ -1,5 +1,5 @@
 // Remove nth node from end 
-public class Linkedlist3 {
+public class RemoveNode {
     DemoNode head;
     class DemoNode {
         int num;
@@ -69,7 +69,7 @@ public class Linkedlist3 {
         return head;
     }
     public static void main(String[] args) {
-        Linkedlist3 list = new Linkedlist3();
+        RemoveNode list = new RemoveNode();
         list.addFirst(78);
         list.addLast(100);
         list.addFirst(5);
