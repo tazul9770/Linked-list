@@ -47,22 +47,39 @@ public class ReverseLinkedlist {
 		}
 		System.out.println("NULL");
 	}
-	// reverse linked list using loop
+	// reverse linked list using lopp 
 	public void reverse() {
 		if(head == null || head.next == null) {
 			return;
 		}
 		Node prev = head;
-		Node currNode = head.next;
-		while(currNode != null) {
-			Node nextNode = currNode.next;
-			currNode.next = prev;
-			
-			prev = currNode;
-			currNode = nextNode;
+		Node curr = head.next;
+		while(curr != null) {
+			Node nextNode = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = nextNode;
 		}
 		head.next = null;
 		head = prev;
+	}
+	// reverse linked list using loop another system
+	public Node reverse(Node head) {
+		if(head == null) {
+			return null;
+		}
+		if(head.next == null) {
+			return head;
+		}
+		Node prev = null;
+		Node curr = head;
+		while(curr != null) {
+			Node newNode = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = newNode;
+		}
+		return prev;
 	}
 	// reverse linked list using recursion 
 	public Node reverseRec(Node head) {
@@ -81,9 +98,11 @@ public class ReverseLinkedlist {
 		list.addLast(200);
 		list.addLast(500);
 		list.printList();
-		list.head = list.reverseRec(list.head);
-		list.printList();
-	   // list.reverse();
+		//list.head = list.reverse(list.head);
 		//list.printList();
+		//list.head = list.reverseRec(list.head);
+		//list.printList();
+	   list.reverse();
+	   list.printList();
     }
 }
