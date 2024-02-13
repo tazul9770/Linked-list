@@ -81,9 +81,9 @@ public class ReverseLinkedlist {
 		list.addLast(200);
 		list.addLast(500);
 		list.printList();
-		//list.head = list.reverseRec(list.head);
-		//list.printList();
-	    list.reverse();
+		list.head = list.reverseRec(list.head);
 		list.printList();
+	   // list.reverse();
+		//list.printList();
     }
 }
