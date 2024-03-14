@@ -46,7 +46,7 @@ public class RemoveNode {
     }
     // remove Nth node from end 
     public DemoNode remove(DemoNode head, int n) {
-        if(head.next == null) {
+        if(head == null || head.next == null) {
             return null;
         }
         int size = 0;
@@ -74,8 +74,9 @@ public class RemoveNode {
         list.addLast(100);
         list.addFirst(5);
         list.addFirst(45);
+        list.addFirst(15);
         list.printList();
-        list.remove(list.head, 2);
+        list.remove(list.head, 5);
         list.printList();
     }
 }

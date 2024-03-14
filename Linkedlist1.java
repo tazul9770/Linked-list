@@ -91,7 +91,7 @@ public class Linkedlist1 {
         list.addLast("also");
         list.addLast("hardik pandiya");
         list.printList();
-        list.reverse();
+       // list.reverse();
         list.printList();
         //print list size
         System.out.println("size = " +list.getSize());
